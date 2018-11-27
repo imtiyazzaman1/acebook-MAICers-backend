@@ -1,14 +1,17 @@
 language: ruby
-
 cache: bundler
-
 rvm:
 - 2.5.1
-
 before_script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 - bundle exec rake db:seed
-
 script:
 - bundle exec rspec spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: vRYnMR2HXgi9cMOf7uoIotEB6/1FOzY0l6v0n4zhDeN3nxUMjj7QlwgFI6zki7aEfTzh9V7XMh/i/7HNHvZuIBUSvHGyrJvOC1NWkWEcrES0UvHv7uThYFHpsFV6IDvhUDjoy9tKfDXeSPPHwsZVnwruH6+OfGBXXto0KP/TCd0jxLRMNyAyoiOXYZF3feSh+aK5gOQ2L8wSw5ockR3vZJywqUenvHgNNseRSf7WGfWGaBJbyRh0f0M0SDobU0sbzUY1xiULAoWkosVkH4tJCEuESUmOq5L//VmnP27gwB3yKYrMiGAVRv5rjOZpyfoYIBPtuewIu1heRJc/clSW8H9MEjiDSr9W8fKrmpm57QHqTJHYS6FEEKcS5eimVdydc+lD1Kpo0g85WM22PZNGkNkLPprpsWltLpRHBqyHfKBzORlOtYQS1ATyQ3l6PWTcOTws9sQ22Uujs6uofVpzxQu3EPVADqj/CcGnlVEV/jSa2j2SC4Mfiuo3erp84IJAsanj7sYn9UZ+CHQu0czY8v4dZvpKa89UFzb8ZNlq9i3GAm4+APj8co9rFoM09CfoUdZbizrXiL9D879pot08OMMDxqEekuXdzO3hRb3iSFY8BVv6v+kjvUBMucP4h2W3g/kDbq8YSsziF5V1YrXD9pPDxMMfWV1dUESeC/XOYQE=
+  app: maicers-acebook-api
+  run:
+    - "rake db:migrate"
