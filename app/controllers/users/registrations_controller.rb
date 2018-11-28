@@ -7,11 +7,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
-
     resource.save
     render_resource(resource)
-
-  end 
+  end
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
