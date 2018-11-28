@@ -2,22 +2,28 @@ require 'rails_helper'
 
 RSpec.describe 'POST /login', type: :request do
   let(:user) { create(:user) }
+  p user
+  p user.name
   let(:url) { '/login' }
   let(:params) do
     {
       user: {
-        name: "name",# user.name,
-        email: "email",# user.email,
-        password: "password"# user.password
+        name: user.name,
+        email: user.email,
+        password: user.password
       }
     }
+    p user
+    p user.name
   end
 
   context 'when params are correct' do
     before do
-      post "/login", params: params
+      post "/login", :params => params
       p url
       p params
+      p user
+      p user.name
     end
 
     it 'returns 200' do
