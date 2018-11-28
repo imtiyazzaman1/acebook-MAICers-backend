@@ -17,7 +17,7 @@ RSpec.describe 'POST /login', type: :request do
     before do
       p params
       p user
-      post "/login", {params: params}
+      post("/login", params: params)
     end
 
     it 'returns 200' do
