@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'POST /login', type: :request do
-  let(:user) { Fabricate(:user) }
+  let(:user) { build(:user) }
   let(:url) { '/login' }
   let(:params) do
     {
