@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'POST /login', type: :request do
-  let(:user) { build(:user) }
+  let(:user) { create(:user) }
   let(:url) { '/login' }
   let(:params) do
+    # byebug
     {
       user: {
+        name: user.name,
         email: user.email,
         password: user.password
       }
