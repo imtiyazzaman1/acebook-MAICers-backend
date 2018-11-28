@@ -4,7 +4,6 @@ RSpec.describe 'POST /login', type: :request do
   let(:user) { create(:user) }
   let(:url) { '/login' }
   let(:params) do
-    # byebug
     {
       user: {
         name: user.name,
@@ -17,6 +16,7 @@ RSpec.describe 'POST /login', type: :request do
   context 'when params are correct' do
     before do
       post url, params: params
+      p url
     end
 
     it 'returns 200' do
