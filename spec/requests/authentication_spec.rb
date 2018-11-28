@@ -11,17 +11,13 @@ RSpec.describe 'POST /login', type: :request do
         password: user.password
       }
     }
-    p user
-    p user.name
   end
 
   context 'when params are correct' do
     before do
       post "/login", :params => params
-      p url
       p params
       p user
-      p user.name
     end
 
     it 'returns 200' do
