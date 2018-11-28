@@ -17,6 +17,7 @@ RSpec.describe 'POST /login', type: :request do
     before do
       post url, params: params
       p url
+      p params
     end
 
     it 'returns 200' do
