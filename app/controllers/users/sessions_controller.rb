@@ -9,10 +9,10 @@ class Users::SessionsController < Devise::SessionsController
     render json: resource
   end
 
-  def respons_to_on_destroy
+  def respond_to_on_destroy
     head :no_content
   end
-  
+
 end
 
   # before_action :configure_sign_in_params, only: [:create]
