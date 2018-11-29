@@ -2,7 +2,13 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
+
+
+gem 'devise'
+gem 'devise-jwt'
+gem 'dotenv-rails'
 gem 'rack-cors', '~> 0.4.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
@@ -29,9 +35,15 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
 group :development, :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails', require: false
+  gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8', '>= 3.8.1'
+  gem 'simplecov'
+  gem 'simplecov-console'
 end
 
 group :development do
