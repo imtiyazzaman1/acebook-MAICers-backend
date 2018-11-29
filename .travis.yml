@@ -8,6 +8,8 @@ before_script:
 - bundle exec rake db:seed
 script:
 - bundle exec rspec spec
+env:
+  - DEVISE_JWT_SECRET_KEY=bfe8b000d37c604ccd00e57d623b83d5c33cda04209db954731811e0fbd049526cb520182484f092e57b782f30f2196124586bd912a4e0cc970ca52afd5e4731
 deploy:
   provider: heroku
   app: maicers-acebook-api
