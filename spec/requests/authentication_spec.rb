@@ -25,11 +25,6 @@ RSpec.describe 'POST /login', type: :request do
     it 'returns JTW token in authorization header' do
       expect(response.headers['Authorization']).to be_present
     end
-
-    # it 'returns valid JWT token' do
-    #   decoded_token = decoded_jwt_token_from_response(response)
-    #   expect(decoded_token.first['sub']).to be_present
-    # end
   end
 
   context 'when login params are incorrect' do
