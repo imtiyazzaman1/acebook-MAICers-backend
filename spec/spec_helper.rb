@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simplecov' # THESE LINES MUST BE AT THE VERY TOP!
 require 'simplecov-console'
 require 'database_cleaner'
