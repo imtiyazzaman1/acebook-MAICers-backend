@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -8,7 +10,9 @@ gem 'devise'
 gem 'devise-jwt'
 gem 'dotenv-rails'
 gem 'rack-cors', '~> 0.4.0'
-
+gem 'rubocop', '~> 0.56.0'
+gem 'rubocop-rails', '~> 1.5'
+gem 'rubocop-rails_config', '~> 0.2.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record

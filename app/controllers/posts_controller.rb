@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   # before_action :authenticate_user!
 
@@ -15,6 +17,8 @@ class PostsController < ApplicationController
     post.destroy
   end
 
+  private
+  
   def post_params
     params.require(:post).permit(:message)
   end

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Requesting all posts", :type => :request do
+RSpec.describe "Requesting all posts", type: :request do
   it "receives JSON" do
     get "/api/posts"
     expect(response.content_type).to eq('application/json')
